@@ -1,0 +1,80 @@
+<html>
+<head>
+  <title>Google Ad</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script async="async" src="https://www.google.com/adsense/search/ads.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    (function(g,o){g[o]=g[o]||function(){(g[o]['q']=g[o]['q']||[]).push(arguments)},g[o]['t']=1*new Date})(window,'_googCsa');
+  </script>
+  <script type="text/javascript">
+    
+    var clicks = 0;
+    function onClick() {
+        clicks += 1;
+        document.getElementById("clicks").innerHTML = clicks;
+        var multiples = clicks % 5;
+        if (multiples == 0){
+          document.getElementById("butt").disabled = true;
+          document.getElementById("ad-div").style.display = "block";
+          document.getElementById("info").style.display = "block";
+         var myVar = setTimeout( "myTimer()", 10000);
+         
+        }
+        else{
+          document.getElementById("ad-div").style.display = "none";        }
+    };
+    function myTimer(){
+      document.getElementById("ad-div").style.display = "none";  
+      document.getElementById("info").style.display = "none";
+      document.getElementById("butt").disabled= false;  }
+    </script>
+    <style type="text/css">
+      body
+      {
+        background-image: url(bg.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-size: 100%;
+      }
+      #div
+      {
+        padding-top: 200px;
+        margin-top: 100px;
+         margin-left: auto;
+         margin-right: auto;
+         border-radius: 10px;
+         width:30em;
+         height:23em;
+      }
+    </style>
+  </head>
+  <body style="background-image: url(bg.jpg)">
+    <div class=" col-md-12 container" style="display: none" id="ad-div">
+      <script type="text/javascript" charset="utf-8">
+  var pageOptions = {
+    "pubId": "pub-9616389000213823",
+    "query": "restaurent",
+    "adPage": 1
+  };
+  var adblock1 = {
+    "container": "ad-div",
+    "width": "100%",
+    "number": 1
+  };
+  _googCsa('ads', pageOptions, adblock1);
+</script>
+    </div>
+    <div>
+          <center>
+        <button type="button" class="btn btn-lg" onClick="onClick()" id="butt">Click</button><br><br><br>
+    <p style="color: white">Count: <a id="clicks" style="color: white">0</a></p>
+     <p id="info" style="display: none;color:white ">Please Wait for 10 secs</p>
+      </center>
+    </div>
+  </body>
+  </html>
